@@ -1,19 +1,20 @@
 'use client'
 
 import React from "react"
-
-import { useChat } from '@ai-sdk/react'
 import { useState, useRef, useEffect } from 'react'
-import { DefaultChatTransport } from 'ai'
 import { motion, AnimatePresence } from 'framer-motion'
+
+interface Message {
+  role: 'user' | 'assistant'
+  content: string
+}
 
 export function ChronosChatWidget() {
   const [isOpen, setIsOpen] = useState(false)
+  const [messages, setMessages] = useState<Message[]>([])
+  const [input, setInput] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
-
-  const { messages, input, handleInputChange, sendMessage, isLoading } = useChat({
-    transport: new DefaultChatTransport({ api: '/api/chat' }),
-  })
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -25,8 +26,33 @@ export function ChronosChatWidget() {
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!input.trim()) return
-    await sendMessage({ text: input })
+    if (!input.trim() || isLoading) return
+
+    const userMessage: Message = { role: 'user', content: input }
+    setMessages(prev => [...prev, userMessage])
+    setInput('')
+    setIsLoading(true)
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [...messages, userMessage],
+        }),
+      })
+
+      const data = await response.json()
+      setMessages(prev => [...prev, { role: 'assistant', content: data.content }])
+    } catch (error) {
+      console.error('Erreur:', error)
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: 'Désolé, une erreur est survenue. Veuillez réessayer.'
+      }])
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -44,10 +70,10 @@ export function ChronosChatWidget() {
             <div className="bg-gradient-to-r from-primary/20 to-transparent border-b border-white/[0.1] p-4 flex items-center justify-between">
               <div>
                 <h3 className="text-white font-serif font-bold text-lg">
-                  Chronos Concierge
+                  Boutty le Concierge
                 </h3>
                 <p className="text-xs text-gray-400">
-                  Your Personal Time Travel Guide
+                  Votre guide personnel de voyage dans le temps
                 </p>
               </div>
             </div>
@@ -59,7 +85,7 @@ export function ChronosChatWidget() {
                   <div className="text-center">
                     <div className="text-4xl mb-3">⏰</div>
                     <p className="text-gray-300 text-sm">
-                      Welcome. How may I assist you today?
+                      Bienvenue. Comment puis-je vous aider aujourd'hui ?
                     </p>
                   </div>
                 </div>
@@ -108,8 +134,8 @@ export function ChronosChatWidget() {
                 <input
                   type="text"
                   value={input}
-                  onChange={handleInputChange}
-                  placeholder="Ask about destinations..."
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder="Posez-moi vos questions sur les voyages temporels..."
                   className="flex-1 bg-white/[0.05] border border-white/[0.1] rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-primary/50 transition-colors"
                   disabled={isLoading}
                 />
