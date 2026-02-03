@@ -1,12 +1,14 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { DestinationCard } from './destination-card'
+import { useState } from 'react'
 
 const destinations = [
   {
-    title: 'Ancient Rome',
-    year: '79 AD',
+    title: ' Paris 1889 ',
+    year: 'Exposition Universelle & Belle Époque',
+    imageUrl: './img/paris1889.jpg', // Placeholder - user to update
     description:
       'Experience the zenith of imperial grandeur. Witness gladiatorial spectacles in the Colosseum, attend exclusive gatherings in marble palaces, and navigate the vibrant Forum where politics and philosophy intertwine.',
     details: [
@@ -17,8 +19,8 @@ const destinations = [
     ],
   },
   {
-    title: 'Victorian London',
-    year: '1887',
+    title: 'Crétacé -65M années',
+    year: 'Derniers jours des dinosaures',
     description:
       'Immerse yourself in an era of unparalleled elegance. Attend grand balls, explore intellectually stimulating salons, and experience the height of British sophistication during Queen Victoria\'s golden jubilee.',
     details: [
@@ -27,10 +29,11 @@ const destinations = [
       'Botanical garden tours',
       'Private library access',
     ],
+    imageUrl: './img/cretace.jpg', // Placeholder
   },
   {
-    title: 'Neo-Tokyo',
-    year: '2157',
+    title: 'Renaissance Florence 1504 ',
+    year: 'Âge d’or artistique',
     description:
       'Venture into a dazzling future metropolis. Navigate neon-soaked streets, experience cutting-edge technology, and immerse yourself in a culture that seamlessly blends tradition with advancement.',
     details: [
@@ -39,13 +42,34 @@ const destinations = [
       'Tech showcase events',
       'Fusion cuisine experiences',
     ],
+    imageUrl: './img/Renaissance Florence 1504.jpg', // Placeholder
   },
 ]
 
 export function DestinationsSection() {
+  const [activeBackground, setActiveBackground] = useState<string | null>('/img/paris1889.jpg')
+
   return (
-    <section id="destinations" className="relative py-24 px-6 bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section id="destinations" className="relative py-24 px-6 bg-background overflow-hidden transition-all duration-700">
+      {/* Dynamic Background Image */}
+      <AnimatePresence mode="wait">
+        {activeBackground && (
+          <motion.div
+            key={activeBackground}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.4 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${activeBackground})` }}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Gradient overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background z-0 pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,6 +94,7 @@ export function DestinationsSection() {
               key={destination.title}
               {...destination}
               index={index}
+              onClick={(img) => setActiveBackground(img)}
             />
           ))}
         </div>
