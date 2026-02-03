@@ -26,4 +26,4 @@ Page d'accueil :
 ## Informations sur le déroulé
 
 - phase 1 : 
-1.2.a -> template généré par v02.dev.vercel
+1.2.a -> template généré par v02.dev.vercel (cout : 4,76 crédits)

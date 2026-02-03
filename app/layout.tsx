@@ -8,7 +8,7 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-serif'
 const lato = Lato({ weight: ['400', '700'], subsets: ["latin"], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-  title: 'Chronos - Luxury Time Travel Agency',
+  title: 'Time Travel Agency',
   description: 'Journey through history with unparalleled elegance and sophistication. Experience Ancient Rome, Victorian London, and Neo-Tokyo.',
   generator: 'v0.app',
   icons: {
