@@ -44,9 +44,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-slate-950/40 via-blue-950/30 to-slate-900/40" />
 
       {/* Nebula effect layers */}
-      {/* <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl opacity-30 animate-pulse" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl opacity-20 animate-pulse" />
-      <div className="absolute top-1/2 right-0 w-72 h-72 bg-cyan-500/15 rounded-full filter blur-3xl opacity-25 animate-pulse" /> */}
+
 
 
 
