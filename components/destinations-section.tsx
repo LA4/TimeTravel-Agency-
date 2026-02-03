@@ -3,48 +3,23 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { DestinationCard } from './destination-card'
 import { useState } from 'react'
+import { KNOWLEDGE_BASE } from '@/app/api/chat/knowledge-base'
 
-const destinations = [
-  {
-    title: ' Paris 1889 ',
-    year: 'Exposition Universelle & Belle Époque',
-    imageUrl: '/img/paris1889.png',
-    description:
-      'Experience the zenith of imperial grandeur. Witness gladiatorial spectacles in the Colosseum, attend exclusive gatherings in marble palaces, and navigate the vibrant Forum where politics and philosophy intertwine.',
-    details: [
-      'Exclusive Colosseum viewing',
-      'Imperial palace access',
-      'Symposium dinners',
-      'Forum guided expeditions',
-    ],
-  },
-  {
-    title: 'Crétacé -65M années',
-    year: 'Derniers jours des dinosaures',
-    description:
-      'Immerse yourself in an era of unparalleled elegance. Attend grand balls, explore intellectually stimulating salons, and experience the height of British sophistication during Queen Victoria\'s golden jubilee.',
-    details: [
-      'Grand ballroom galas',
-      'West End theatre nights',
-      'Botanical garden tours',
-      'Private library access',
-    ],
-    imageUrl: '/img/cretace.png',
-  },
-  {
-    title: 'Renaissance Florence 1504 ',
-    year: 'Âge d’or artistique',
-    description:
-      'Venture into a dazzling future metropolis. Navigate neon-soaked streets, experience cutting-edge technology, and immerse yourself in a culture that seamlessly blends tradition with advancement.',
-    details: [
-      'Rooftop skyline tours',
-      'Cyberpunk district exploration',
-      'Tech showcase events',
-      'Fusion cuisine experiences',
-    ],
-    imageUrl: '/img/Renaissance Florence 1504 .png',
-  },
-]
+// Mapping des images pour chaque destination
+const destinationImages: Record<string, string> = {
+  'Paris 1889': './img/paris1889.jpg',
+  'Crétacé -65M': './img/cretace.jpg',
+  'Florence 1504': './img/Renaissance Florence 1504.jpg',
+}
+
+// Construire les destinations à partir de la base de connaissances centralisée
+const destinations = Object.entries(KNOWLEDGE_BASE.destinations).map(([name, data]) => ({
+  title: name,
+  year: data.period,
+  imageUrl: destinationImages[name] || './img/default.jpg',
+  description: data.description,
+  details: data.activities,
+}))
 
 export function DestinationsSection() {
   const [activeBackground, setActiveBackground] = useState<string | null>('/img/paris1889.png')
