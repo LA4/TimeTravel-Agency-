@@ -22,10 +22,11 @@ const destinations = Object.entries(KNOWLEDGE_BASE.destinations).map(([name, dat
 }))
 
 export function DestinationsSection() {
-  const [activeBackground, setActiveBackground] = useState<string | null>('/img/paris1889.jpg')
+  const [activeBackground, setActiveBackground] = useState<string | null>('/img/paris1889.png')
+  const [selectedDestination, setSelectedDestination] = useState<typeof destinations[0] | null>(null)
 
   return (
-    <section id="destinations" className="relative py-24 px-6 bg-background overflow-hidden transition-all duration-700">
+    <section id="destinations" className="relative py-24 px-6 bg-background overflow-hidden transition-all duration-700 h-screen">
       {/* Dynamic Background Image */}
       <AnimatePresence mode="wait">
         {activeBackground && (
@@ -34,15 +35,15 @@ export function DestinationsSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.4 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${activeBackground})` }}
+            style={{ backgroundImage: `url("${activeBackground}")` }}
           />
         )}
       </AnimatePresence>
 
       {/* Gradient overlay to ensure text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background z-0 pointer-events-none opacity-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
@@ -69,10 +70,28 @@ export function DestinationsSection() {
               key={destination.title}
               {...destination}
               index={index}
-              onClick={(img) => setActiveBackground(img)}
+              imageUrl={destination.imageUrl}
+              onClick={(img) => {
+                setActiveBackground(img)
+                setSelectedDestination(destination)
+              }}
             />
           ))}
         </div>
+
+        {/* Modal Overlay for Selected Card */}
+        <AnimatePresence>
+          {selectedDestination && (
+            <DestinationCard
+              {...selectedDestination}
+              index={0}
+              imageUrl={selectedDestination.imageUrl}
+              isActive={true}
+              onClick={() => { }} // No-op for the modal itself
+              onClose={() => setSelectedDestination(null)}
+            />
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Background decoration */}
