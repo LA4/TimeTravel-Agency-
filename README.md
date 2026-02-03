@@ -69,8 +69,8 @@ Suivez ces étapes pour déployer l'agence temporelle sur votre machine locale.
 
 1.  **Cloner le dépôt**
     ```bash
-    git clone https://github.com/votre-repo/timetravel-agency.git
-    cd timetravel-agency
+    git clone https://github.com/LA4/TimeTravel-Agency-.git
+    cd TimeTravel-Agency-
     ```
 
 2.  **Installer les dépendances**
@@ -81,7 +81,7 @@ Suivez ces étapes pour déployer l'agence temporelle sur votre machine locale.
 3.  **Configuration des variables d'environnement**
     Créez un fichier `.env.local` à la racine et ajoutez votre clé API Mistral :
     ```env
-    MISTRAL_API_KEY=votre_clé_api_ici
+    MISTRAL_API_KEY=**************
     ```
 
 4.  **Lancer le serveur de développement**
