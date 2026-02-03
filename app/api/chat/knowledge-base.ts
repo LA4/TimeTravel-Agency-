@@ -3,14 +3,14 @@ export const KNOWLEDGE_BASE = {
   company: {
     name: "Time Travel Agency",
     tagline: "Votre voyage personnalisé",
-    description: "Curated historical experiences crafted for the most discerning travelers",
+    description: "Des expériences historiques sur mesure conçues pour les voyageurs les plus exigeants",
     services: [
-      "Luxury temporal journeys",
-      "Personalized time travel experiences",
-      "Curated historical destinations"
+      "Voyages temporels de luxe",
+      "Expériences de voyage dans le temps personnalisées",
+      "Destinations historiques sélectionnées"
     ]
   },
-  
+
   destinations: {
     "Paris 1889": {
       year: "1889",
@@ -29,7 +29,7 @@ export const KNOWLEDGE_BASE = {
         "Élégance de la Belle Époque"
       ]
     },
-    
+
     "Crétacé -65M": {
       year: "-65 millions d'années",
       period: "Fin du Crétacé - Âge des dinosaures",
@@ -47,7 +47,7 @@ export const KNOWLEDGE_BASE = {
         "Expérience scientifique unique"
       ]
     },
-    
+
     "Florence 1504": {
       year: "1504",
       period: "Renaissance italienne - Âge d'or de l'art",
@@ -69,9 +69,9 @@ export const KNOWLEDGE_BASE = {
 
   gallery: {
     videos: [
-      "Romantic encounters through time",
-      "Florence promotional video",
-      "Cretaceous period cinematic experience"
+      "Rencontres romantiques à travers le temps",
+      "Vidéo promotionnelle de Florence",
+      "Expérience cinématographique du Crétacé"
     ]
   },
 

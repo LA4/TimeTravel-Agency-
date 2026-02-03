@@ -97,16 +97,14 @@ export function ChronosChatWidget() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
-                  className={`flex ${
-                    message.role === 'user' ? 'justify-end' : 'justify-start'
-                  }`}
+                  className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'
+                    }`}
                 >
                   <div
-                    className={`max-w-xs px-4 py-2 rounded-lg text-sm ${
-                      message.role === 'user'
+                    className={`max-w-xs px-4 py-2 rounded-lg text-sm ${message.role === 'user'
                         ? 'bg-primary/30 text-white border border-primary/50'
                         : 'bg-white/[0.05] text-gray-200 border border-white/[0.1]'
-                    }`}
+                      }`}
                   >
                     {message.content}
                   </div>
@@ -144,7 +142,7 @@ export function ChronosChatWidget() {
                   disabled={isLoading || !input.trim()}
                   className="px-4 py-2 bg-primary/20 hover:bg-primary/30 disabled:opacity-50 text-primary border border-primary/30 rounded-lg text-sm font-semibold transition-colors"
                 >
-                  Send
+                  Envoyer
                 </button>
               </form>
             </div>

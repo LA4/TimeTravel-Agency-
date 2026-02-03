@@ -16,10 +16,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
               <h4 className="font-serif text-2xl font-bold text-white mb-4">
-                Chronos
+                Time Travel Agency
               </h4>
               <p className="text-gray-400 text-sm">
-                Luxury temporal journeys for the discerning traveler.
+                Des voyages temporels de luxe pour le voyageur exigeant.
               </p>
             </div>
             <div>
@@ -27,32 +27,32 @@ export default function Home() {
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
-                    Ancient Rome
+                    Paris 1889
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
-                    Victorian London
+                    Crétacé -65M
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
-                    Neo-Tokyo
+                    Florence 1504
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h5 className="text-white font-semibold mb-4">Company</h5>
+              <h5 className="text-white font-semibold mb-4">Entreprise</h5>
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
-                    About
+                    À propos
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
-                    Concierge
+                    Conciergerie
                   </a>
                 </li>
                 <li>
@@ -63,21 +63,21 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h5 className="text-white font-semibold mb-4">Legal</h5>
+              <h5 className="text-white font-semibold mb-4">Légal</h5>
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
-                    Privacy
+                    Confidentialité
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
-                    Terms
+                    Conditions
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
-                    Temporal Disclaimers
+                    Avis de non-responsabilité temporel
                   </a>
                 </li>
               </ul>
@@ -85,7 +85,7 @@ export default function Home() {
           </div>
 
           <div className="border-t border-white/[0.1] pt-8 flex items-center justify-between text-sm text-gray-400">
-            <p>&copy; 2157 Chronos Agency. All temporal rights reserved.</p>
+            <p>&copy; 2157 Time Travel Agency. Tous droits temporels réservés.</p>
             <div className="flex gap-4">
               <a href="#" className="hover:text-primary transition-colors">
                 Instagram

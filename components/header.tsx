@@ -17,9 +17,6 @@ export function Header() {
           </h1>
         </a>
 
-        <button className="px-6 py-2 bg-primary/20 hover:bg-primary/30 text-primary border border-primary/50 hover:border-primary rounded-full text-sm font-semibold transition-all duration-300">
-          Galerie
-        </button>
       </div>
     </motion.header>
   );

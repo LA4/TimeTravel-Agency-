@@ -82,7 +82,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-100 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
           >
-            Votre voyage personnalisé. Curated historical experiences crafted for the most discerning travelers.
+            Votre voyage personnalisé. Des expériences historiques sur mesure conçues pour les voyageurs les plus exigeants.
           </motion.p>
 
           <motion.div
@@ -95,7 +95,7 @@ export function HeroSection() {
               href="#destinations"
               className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/30 rounded-full font-semibold transition-all duration-300 backdrop-blur-sm shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 inline-block"
             >
-              View Destinations
+              Voir les Destinations
             </a>
           </motion.div>
         </div>

@@ -97,7 +97,7 @@ export function DestinationCard({
               transition={{ delay: 0.5 }}
               className="w-full sm:w-auto px-8 py-3 rounded-full bg-primary hover:bg-primary/90 text-black font-bold transition-colors"
             >
-              Book This Era
+              Réserver cette Époque
             </motion.button>
           </div>
         </motion.div>
@@ -124,7 +124,7 @@ export function DestinationCard({
           {title}
         </motion.h3>
         <p className="mt-2 text-primary/60 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 uppercase tracking-widest">
-          Click to Explore
+          Cliquez pour Explorer
         </p>
       </div>
     </motion.div>

@@ -6,17 +6,18 @@ import { useState } from 'react'
 import { KNOWLEDGE_BASE } from '@/app/api/chat/knowledge-base'
 
 // Mapping des images pour chaque destination
+// Mapping des images pour chaque destination
 const destinationImages: Record<string, string> = {
-  'Paris 1889': './img/paris1889.jpg',
-  'Crétacé -65M': './img/cretace.jpg',
-  'Florence 1504': './img/Renaissance Florence 1504.jpg',
+  'Paris 1889': '/img/paris1889.png',
+  'Crétacé -65M': '/img/cretace.png',
+  'Florence 1504': '/img/Renaissance Florence 1504 .png',
 }
 
 // Construire les destinations à partir de la base de connaissances centralisée
 const destinations = Object.entries(KNOWLEDGE_BASE.destinations).map(([name, data]) => ({
   title: name,
   year: data.period,
-  imageUrl: destinationImages[name] || './img/default.jpg',
+  imageUrl: destinationImages[name] || '/img/default.jpg',
   description: data.description,
   details: data.activities,
 }))
@@ -34,8 +35,8 @@ export function DestinationsSection() {
             key={activeBackground}
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.4 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6 }}
+            exit={{ opacity: 0.4 }}
+            transition={{ duration: 0.8 }}
             className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url("${activeBackground}")` }}
           />
@@ -54,13 +55,13 @@ export function DestinationsSection() {
           className="text-center mb-16"
         >
           <p className="text-primary font-semibold tracking-[3px] text-sm mb-4 uppercase">
-            Curated Experiences
+            Expériences Uniques
           </p>
           <h2 className="font-serif text-5xl md:text-6xl font-bold text-white mb-6 text-balance">
-            Our Signature Destinations
+            Nos Destinations Signatures
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Each destination has been meticulously curated to provide unforgettable encounters with history's most captivating moments.
+            Chaque destination a été méticuleusement sélectionnée pour offrir des rencontres inoubliables avec les moments les plus captivants de l'histoire.
           </p>
         </motion.div>
 
