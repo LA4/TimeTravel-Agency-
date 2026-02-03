@@ -73,7 +73,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="font-serif text-6xl md:text-8xl font-bold text-white mb-6 leading-tight text-balance drop-shadow-lg"
           >
-            Time Travel Afdgfdggency
+            Time Travel Agency
           </motion.h1>
 
           <motion.p
