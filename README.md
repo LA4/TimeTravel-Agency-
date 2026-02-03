@@ -29,105 +29,62 @@ Page d'accueil :
 1.2.a -> template généré par v02.dev.vercel (cout : 4,76 crédits)
 
 ## Maquette :
-┌─────────────────────────────────────────────────────────────────────┐
-│                                                                     │
-│  ┌────────────────────────────────────────────────────────────┐   │
-│  │ HEADER FIXE (Glassmorphism)                               │   │
-│  │  Chronos    Destinations | Experiences | Concierge | Contact  │
-│  │                                               [Explore Button] │   │
-│  └────────────────────────────────────────────────────────────┘   │
-│                                                                     │
-│  ┌────────────────────────────────────────────────────────────┐   │
-│  │                        HERO SECTION                        │   │
-│  │                   (100% viewport height)                  │   │
-│  │                                                            │   │
-│  │  Background: Nebula cosmic + gradient overlay             │   │
-│  │  + Clock SVG animée (rotation continue)                  │   │
-│  │  + Particules de nebula (blur effects)                   │   │
-│  │                                                            │   │
-│  │              [Luxury Temporal Journeys]                   │   │
-│  │                                                            │   │
-│  │                      CHRONOS                              │   │
-│  │              (Playfair Display, 8xl bold)                │   │
-│  │                                                            │   │
-│  │        Step beyond the boundaries of time.               │   │
-│  │     Curated historical experiences crafted               │   │
-│  │        for the most discerning travelers.                │   │
-│  │                                                            │   │
-│  │          [Begin Your Journey]  [View Destinations]       │   │
-│  │                                                            │   │
-│  │                    ↓ SCROLL TO EXPLORE ↓                 │   │
-│  │                                                            │   │
-│  └────────────────────────────────────────────────────────────┘   │
-│                                                                     │
-│  ┌────────────────────────────────────────────────────────────┐   │
-│  │                   DESTINATIONS SECTION                    │   │
-│  │                                                            │   │
-│  │           Curated Experiences (champagne gold)            │   │
-│  │         Our Signature Destinations (6xl font)            │   │
-│  │                                                            │   │
-│  │  Each destination has been meticulously curated...       │   │
-│  │                                                            │   │
-│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │   │
-│  │  │ ANCIENT ROME │  │VICTORIAN LOND│  │  NEO-TOKYO   │  │   │
-│  │  │    79 AD     │  │    1887      │  │   2157       │  │   │
-│  │  │              │  │              │  │              │  │   │
-│  │  │ [Glasmorph]  │  │ [Glasmorph]  │  │ [Glasmorph]  │  │   │
-│  │  │ Card avec    │  │ Card avec    │  │ Card avec    │  │   │
-│  │  │ backdrop blur│  │ backdrop blur│  │ backdrop blur│  │   │
-│  │  │              │  │              │  │              │  │   │
-│  │  │ Experience   │  │ Experience   │  │ Experience   │  │   │
-│  │  │ the zenith   │  │ Immerse      │  │ Venture into │  │   │
-│  │  │ of imperial  │  │ yourself in  │  │ a dazzling   │  │   │
-│  │  │ grandeur...  │  │ an era of...│  │ future...   │  │   │
-│  │  │              │  │              │  │              │  │   │
-│  │  │ • Colosseum  │  │ • Grand balls│  │ • Rooftop    │  │   │
-│  │  │ • Imperial   │  │ • West End   │  │ • Cyberpunk  │  │   │
-│  │  │ • Symposium  │  │ • Botanical  │  │ • Tech       │  │   │
-│  │  │ • Forum      │  │ • Library    │  │ • Fusion     │  │   │
-│  │  │              │  │              │  │              │  │   │
-│  │  │ [Learn More] │  │ [Learn More] │  │ [Learn More] │  │   │
-│  │  │              │  │              │  │              │  │   │
-│  │  └──────────────┘  └──────────────┘  └──────────────┘  │   │
-│  │                                                            │   │
-│  │  Background décoration: Blurred circles (primary/5)      │   │
-│  │                                                            │   │
-│  └────────────────────────────────────────────────────────────┘   │
-│                                                                     │
-│  ┌────────────────────────────────────────────────────────────┐   │
-│  │                    FOOTER SECTION                         │   │
-│  │                                                            │   │
-│  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐   │   │
-│  │  │ Chronos  │ │Destinat. │ │Company   │ │  Legal   │   │   │
-│  │  │          │ │          │ │          │ │          │   │   │
-│  │  │Luxury    │ │• Ancient │ │• About   │ │• Privacy │   │   │
-│  │  │temporal  │ │  Rome    │ │• Concier.│ │• Terms   │   │   │
-│  │  │journeys  │ │• Victorian│ │• Contact │ │• Temporal│   │   │
-│  │  │          │ │  London  │ │          │ │  Disc.  │   │   │
-│  │  │          │ │• Neo-    │ │          │ │          │   │   │
-│  │  │          │ │  Tokyo   │ │          │ │          │   │   │
-│  │  └──────────┘ └──────────┘ └──────────┘ └──────────┘   │   │
-│  │                                                            │   │
-│  │  © 2157 Chronos Agency. All temporal rights reserved.    │   │
-│  │                  Instagram | Twitter | LinkedIn           │   │
-│  │                                                            │   │
-│  └────────────────────────────────────────────────────────────┘   │
-│                                                                     │
-│  ┌────────────────────────────────────────────────────────────┐   │
-│  │          CHATBOT WIDGET (Coin bas-droit fixe)            │   │
-│  │                                                            │   │
-│  │  ┌──────────────────────────────────────────────┐        │   │
-│  │  │ Chronos Concierge      [_] [×]                │        │   │
-│  │  │                                                │        │   │
-│  │  │ Bonjour! Je suis le Chronos Concierge...   │        │   │
-│  │  │ Comment puis-je vous aider?                  │        │   │
-│  │  │                                                │        │   │
-│  │  │ [Votre message...]                   [Envoyer]│        │   │
-│  │  │                                                │        │   │
-│  │  │ (Glasmorphic design avec backdrop blur)      │        │   │
-│  │  │                                                │        │   │
-│  │  └──────────────────────────────────────────────┘        │   │
-│  │                                                            │   │
-│  └────────────────────────────────────────────────────────────┘   │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
+D'accord, je comprends. Vous souhaitez une explication détaillée (le "blueprint") de la maquette pour pouvoir la réaliser ou la présenter, en respectant scrupuleusement les consignes de votre document (Paris 1889, Crétacé, Florence 1504).
+
+Voici la structure logique et visuelle de votre webapp, décomposée section par section :
+
+1. Le Header (Navigation "Glassmorphism")
+Visuel : Une barre translucide avec un effet de flou d'arrière-plan (backdrop-blur).
+
+Contenu : * À gauche : Logo "Chronos" en police Serif élégante.
+
+Au centre : Liens de navigation (Destinations, Expériences, Concierge).
+
+À droite : Un bouton CTA "Réserver" avec une bordure dorée lumineuse.
+
+2. Hero Section (L'immersion temporelle)
+Fond : Une vidéo en boucle d'une nébuleuse sombre avec des particules d'or qui flottent.
+
+Élément Central : L'horloge SVG. Elle ne doit pas être une simple image, mais une animation fluide où les aiguilles tournent à des vitesses différentes, symbolisant le flux temporel.
+
+Typographie : Le titre "CHRONOS" en très grand (8xl), avec un sous-titre qui présente la promesse de l'agence : "Explorez l'histoire, réinventée."
+
+3. Section Destinations (Les 3 cartes imposées)
+Conformément à vos consignes, cette section présente les trois époques clés sous forme de cartes interactives (effet de survol qui agrandit la carte) :
+
+Carte 1 : Paris 1889 (L'Exposition Universelle)
+
+Visuel : Gravure dorée de la Tour Eiffel en construction sur fond sombre.
+
+Texte : "L'âge de fer et des lumières".
+
+Carte 2 : Le Crétacé (L'Ère des Géants)
+
+Visuel : Silhouette de dinosaure dans une jungle luxuriante stylisée.
+
+Texte : "L'aube de la vie sauvage".
+
+Carte 3 : Florence 1504 (La Renaissance)
+
+Visuel : Coupole du Duomo ou esquisse de Léonard de Vinci.
+
+Texte : "Le zénith du génie humain".
+
+4. Le Widget "Chronos Concierge" (IA Agent)
+Emplacement : Fixe, en bas à droite de l'écran.
+
+Apparence : Une icône de sablier qui, lorsqu'on clique dessus, ouvre une fenêtre de chat élégante (fond sombre, texte doré).
+
+Comportement : C'est ici que l'API Mistral Small interviendra pour répondre aux questions des clients sur les protocoles de sécurité temporelle ou les détails des époques.
+
+5. Le Footer (Identité & Légal)
+Design : Très épuré, séparé par une fine ligne dorée.
+
+Détails : Liens vers les réseaux sociaux et la mention spéciale demandée par le brief : "© 2157 Chronos Agency. All temporal rights reserved."
+
+Résumé des codes couleurs pour votre design :
+Noir Obsidienne : #0A0A0A (Fond principal)
+
+Or Champagne : #D4AF37 (Titres, boutons et détails)
+
+Gris Anthracite : #1A1A1A (Cartes et sections secondaires)
