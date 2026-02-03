@@ -1,6 +1,7 @@
 # TimeTravel Agency - Webapp Interactive
 
-Consultez notre site ici : [time-travel-agency](https://time-travel-agency-delta.vercel.app/)
+Consultez notre site ici : [TimeTravel Agency](https://time-travel-agency-delta.vercel.app/)
+Produit par :  Ludovic ANDREOTTI , Nina GUIGUET
 
 Bienvenue chez **TimeTravel Agency**, la référence absolue du voyage temporel de luxe.
 
